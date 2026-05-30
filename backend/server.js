@@ -1,15 +1,22 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const connectDB = require("./config/db");
-
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
 dotenv.config();
 
 connectDB();
 
 const app = express();
 
+app.use(cors());
+app.use(express.json());
+
 app.get("/", (req, res) => {
-  res.send("Server is running...");
+  res.json({
+    success: true,
+    message: "Task Manager API Running",
+  });
 });
 
 const PORT = process.env.PORT || 5000;
