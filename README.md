@@ -44,6 +44,21 @@
 | PUT    | `/api/tasks/:id`     | Update Task   |
 | DELETE | `/api/tasks/:id`     | Delete Task   |
 
+# API Screenshots
+
+* Register
+<img width="1382" height="748" alt="image" src="https://github.com/user-attachments/assets/d4f3ad73-1c48-41b9-9f69-6266dbc8d97c" />
+
+* Login
+  <img width="1382" height="637" alt="image" src="https://github.com/user-attachments/assets/a33f0a96-9456-4999-8d04-e8a91b5582d3" />
+
+* Add Task
+  <img width="1383" height="742" alt="image" src="https://github.com/user-attachments/assets/a85b222c-ccb6-4947-9fd5-b77c44b910c3" />
+
+* Get All Task
+<img width="832" height="882" alt="image" src="https://github.com/user-attachments/assets/f616182e-6d99-4c76-bc7b-10e647c5e9fe" />
+
+
 # 📸 Screenshots
 
 * Register Page
