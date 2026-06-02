@@ -1,11 +1,43 @@
-import React from "react";
-import Home from "./pages/Home"; // Agar Home.jsx 'pages' folder mein hai
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Register from "./auth/Register";
+import Login from "./auth/Login";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./protectRoute/ProtectRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <BrowserRouter>
+      {/* ToastContainer ko hamesha top-level par, Routes ke bahar rakhein */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
